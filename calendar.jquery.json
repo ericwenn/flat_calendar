@@ -1,0 +1,28 @@
+{
+    "name": "flat_calendar",
+    "title": "Flat jQuery Calendar",
+    "description": "jQuery plugin for implementing a calendar on your website with ease.",
+    "keywords": [
+        "calendar",
+        "date"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Eric Wennerberg",
+        "url": "http://ericwenn.se"
+    },
+    "maintainers": [
+        {
+            "name": "Eric Wennerberg",
+            "email": "ericwenn@gmail.com",
+            "url": "http://ericwenn.se"
+        }
+    ],
+    "bugs": "https://github.com/jquery/jquery-color/issues",
+    "homepage": "http://www.ericwenn.se/frameworks/flatmin/calendar/",
+    "docs": "http://www.ericwenn.se/frameworks/flatmin/calendar/",
+    "download": "http://www.ericwenn.se/frameworks/flatmin/calendar/flatmin-calendar.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
