@@ -1,0 +1,281 @@
+@mixin flex-box() {
+	display: -webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+@mixin justify-content($e) {
+	-webkit-box-pack: $e;
+	-moz-box-pack: $e; 
+	-ms-flex-pack: $e; 
+	-webkit-justify-content: $e;
+	justify-content: $e;
+}
+@mixin flex-direction($e) {
+	-webkit-flex-direction:$e;
+	-ie-flex-direction:$e;
+	flex-direction:$e;
+}
+@mixin flex($e) {
+	-webkit-flex:$e;
+	-ie-flex:$e;
+	-moz-flex:$e;
+	flex:$e;	
+}
+@mixin align-items($e) {
+	-webkit-box-align: $e;
+	-moz-box-align: $e;
+	-ms-flex-align: $e;
+	-webkit-align-items: $e;
+	align-items: $e;
+}
+
+@mixin calc($v,$k,$f) {
+	#{$v}: #{$f};
+  #{$v}: -moz-calc(#{$k}); 
+  #{$v}: -o-calc(#{$k}); 
+  #{$v}: -webkit-calc(#{$k}); 
+  #{$v}: calc(#{$k}); 
+} 
+@mixin box-sizing($e) {
+	-moz-box-sizing:$e;
+	box-sizing:$e;
+}
+@mixin transform($e) {
+-webkit-transform: $e;
+   -moz-transform: $e;
+    -ms-transform: $e;
+     -o-transform: $e;
+        transform: $e;
+}
+@mixin transition($e) {
+-webkit-transition: $e;
+   -moz-transition: $e;
+        transition: $e;
+}
+@mixin user-select($e) {
+	-webkit-user-select: $e;
+-moz-user-select: $e;
+-ms-user-select: $e;
+-o-user-select: $e;
+user-select: $e;
+}
+.calendar {
+	@include flex-box;
+	@include flex-direction(column);
+	color: white;
+	font-weight: 300;
+	* {
+		@include box-sizing(border-box);
+	}
+	&.small {
+		font-size: 0.8em;
+		font-weight: 100;
+	}
+	.c-month-view {
+		@include transition(all 0.5s);
+		@include user-select(none);
+		@include flex(1 0 0px);
+		position:relative;
+		font-size:1.6em;
+		margin-bottom:1px;
+		.c-month-arrow {
+			width: 15%;
+			height:100%;
+			position: absolute;
+			top: 0;
+			color: transparent;
+			cursor: pointer;
+			&:hover {
+				background: rgba(255, 255, 255, 0.25);
+			}
+			&[data-dir=left] {
+				left:0;
+			}
+			&[data-dir=right] {
+				right:0;
+			}
+		}
+	}
+	.c-holder {
+		@include flex(6 0 auto);
+		position:relative;
+		.c-grid {
+			position:absolute;
+			height:100%;
+			top:0;
+			left:0;
+			@include flex-box;
+			@include flex-direction(column);
+			width:100%;
+			.c-row {
+				@include flex-box;
+				@include flex(5 0 auto);
+				width:100%;
+				margin-bottom:1px;
+				&:last-child {
+					margin-bottom:0;
+				}
+				.c-day {
+					margin-right:1px;
+					@include flex-box;
+					@include flex(7 0 auto);
+					position:relative;
+					&.c-l .date-holder{
+						font-size:1em;
+					}
+					&:last-child {
+						margin-right:0;
+					}
+					&.have-events {
+						cursor:pointer;
+						&:hover {
+							background-color:rgb(35,35,35);
+						}
+					}
+					&.other-month {
+						color:rgb(55,55,55);
+						&.have-events:hover {
+							color:white;
+						}
+					}
+					&.this-day {
+						background:none;
+					}
+					.date-holder {
+						font-size:1.3em;
+						position:absolute;
+						right:5%;
+						bottom:5%;
+					}
+					.event-n-holder {
+						@include calc(height, "100% - 10px", 90%);
+						@include calc(left, "0px + 5px", 5%);
+						@include calc(top, "0px + 5px", 5%);
+						position:absolute;
+						width:0.25em;
+						.event-n {
+							height:0.5em;
+							background-color:white;
+							width:100%;
+							margin:1px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.c-specific {
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		display:none;
+		padding:1em;
+		.specific-day {
+			width: 30%;
+			display: inline-block;
+			padding-bottom: 1em;
+			cursor: pointer;
+			&:hover {
+				background: rgb(35, 35, 35);
+			}
+			[i=day] {
+				font-size: 3em;
+				text-align: center;
+			}
+			[i=month] {
+				font-size: 2em;
+				line-height: 0.5em;
+				text-align: center;
+			}
+		}
+		.s-scheme {
+			display: inline-block;
+			height: 100%;
+			margin-left: 1em;
+			@include calc(width, "70% - 1em", 60%);
+			overflow-y: scroll;
+			text-align: left;
+			&::-webkit-scrollbar {
+				width:10px;
+			}
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: rgb(35,35,35);
+			}
+			.s-event {
+				padding: 0.5em;
+				margin: 0.5em 0;
+				&:first-child {
+					margin-top:0;
+				}
+				&:last-child {
+					margin-bottom:0;
+				}
+				h1 {
+					margin: 0;
+					font-size: 1.1em;
+					line-height: 1;
+					font-weight: 400;
+				}
+				p {
+					margin:0;
+				}
+				p[data-role=loc] {
+					line-height:1;
+				}
+			}
+		}
+	}
+	&:hover {
+		.c-month-view {
+			background: rgb(35,35,35) !important;
+			.c-month-arrow {
+				color:white;
+			}
+		}
+	}
+	&.spec-day {
+		.c-grid {
+			display:none;
+		}
+		.c-specific {
+			display:block;
+		}
+		.c-month-arrow {
+			display:none;
+		}
+	}
+}
+
+$elements: ".c-month-view,.c-day, .specific-day, .s-event";
+
+[data-color=red] {
+	background-color: #E83C2C;
+	#{$elements} {
+		background-color: #C1291B;
+	}
+}
+[data-color=blue] {
+	background-color: #2497DB;
+	#{$elements} {
+		background-color: #3081B9;
+	}
+}
+[data-color=green] {
+	background-color: #2ECC70;
+	#{$elements} {
+		background-color: #28AE61;
+	}
+}
+[data-color=yellow] {
+	background-color: #F2C30F;
+	#{$elements} {
+		background-color: #F39C12;
+	}
+}
