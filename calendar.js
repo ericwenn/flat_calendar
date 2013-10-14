@@ -138,7 +138,7 @@ $(document).ready(function() {
 	}
 	function activatecalendar() {
 		$(this).parents('.calendar').removeClass('spec-day');
-		$(".specific-day-scheme").html('');
+		$(this).parents('.calendar').find('.s-scheme').html('');
 	}
 	function calendarSetMonth(ele,offset) {
 		ele.find(".c-grid").html('');
