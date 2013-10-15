@@ -47,44 +47,34 @@ include('/home/u/u0056300/www/ericwenn/php/basic/header.php');
 <div opn="share" class="share-bar">
 <div class="g-plus" data-action="share" data-annotation="bubble"></div><a href="https://twitter.com/ericwenn" class="twitter-follow-button" data-show-count="false">Follow @ericwenn</a><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ericwenn.se/frameworks/flatmin/calendar/" data-via="ericwenn" data-text="A flat, responsive and awesome calendar widget" data-lang="en">Tweet</a>
 </div>
-<div class="box calendar" data-showDays="true" data-color="red" opn="demo" style="height:20em";>
-	<div data-role="day" data-day="20130915">
-		<div data-role="event" data-name="Meet the boss" data-start="8.00" data-end="9.00" data-location="London"></div>
-		<div data-role="event" data-name="Cry because of the meeting" data-start="9.30" data-end="10.00" data-location="London"></div>
-	</div>
-	<div data-role="day" data-day="20130901">
-		<div data-role="event" data-name="Walk the dog" data-start="8.00" data-end="9.00" data-location="London"></div>
-		<div data-role="event" data-name="Take doggie to the vet" data-start="9.30" data-end="10.00" data-location="London"></div>
-		<div data-role="event" data-name="Visit the store" data-start="10.30" data-end="11.00" data-location="London"></div>
-	</div>
-	<div data-role="day" data-day="20130910">
-		<div data-role="event" data-name="Go to the game with Felicia" data-start="18.00" data-end="23.00" data-location="London"></div>
-		<div data-role="event" data-name="Walk the dog" data-start="15.00" data-end="16.00" data-location="London"></div>
-	</div>
+<div class="box calendar" data-showdays="true" data-color="red" opn="demo" style="height:20em";>
 	<div data-role="day" data-day="20131010">
-		<div data-role="event" data-name="Go to the game with Felicia" data-start="18.00" data-end="23.00" data-location="London"></div>
-		<div data-role="event" data-name="Walk the dog" data-start="15.00" data-end="16.00" data-location="London"></div>
+		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
+		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
 	</div>
 	<div data-role="day" data-day="20131015">
-		<div data-role="event" data-name="Meet the boss" data-start="8.00" data-end="9.00" data-location="London"></div>
-		<div data-role="event" data-name="Cry because of the meeting" data-start="9.30" data-end="10.00" data-location="London"></div>
+		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
+		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
 	</div>
-	<div data-role="day" data-day="20131001">
-		<div data-role="event" data-name="Walk the dog" data-start="8.00" data-end="9.00" data-location="London"></div>
-		<div data-role="event" data-name="Take doggie to the vet" data-start="9.30" data-end="10.00" data-location="London"></div>
-		<div data-role="event" data-name="Visit the store" data-start="10.30" data-end="11.00" data-location="London"></div>
+	<div data-role="day" data-day="20131016">
+		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
+		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
 	</div>
-	<div data-role="day" data-day="20131002">
-		<div data-role="event" data-name="Go to the game with Felicia" data-start="18.00" data-end="23.00" data-location="London"></div>
-		<div data-role="event" data-name="Walk the dog" data-start="15.00" data-end="16.00" data-location="London"></div>
+	<div data-role="day" data-day="20131020">
+		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
+		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
+	</div>
+	<div data-role="day" data-day="20131110">
+		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
+		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
 	</div>
 </div>
 <p class="jquery-need">This widget is dependent on Jquery</p>
 <a opn="download" href="<?php echo $dllink; ?>" class="nostyle"><div class="downloadbutton" data-version="<?php echo $version; ?>" data-product="Flatmin Calendar"><span>Download v<?php echo $version; ?></span></div></a>
 <p>If you like this plugin and want to follow the development, follow me on twitter<p>
 <a href="https://twitter.com/ericwenn" class="twitter-follow-button" data-show-count="false">Follow @ericwenn</a>
-<pre><code class="prettyprint">&lt;link href=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/calendar.css&quot; rel=&quot;stylesheet&quot;&gt;<br/>&lt;script src=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/calendar.js&quot;&gt;&lt;/script&gt;</code></pre>
-<h2>Changelog v1.1.0</h2>1
+<pre><code class="prettyprint">&lt;link href=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/c.css&quot; rel=&quot;stylesheet&quot;&gt;<br/>&lt;script src=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/calendar.js&quot;&gt;&lt;/script&gt;</code></pre>
+<h2>Changelog v1.1.0</h2>
 <ul>
 	<li><h5>Flexbox</h5><p>The plugin is now harnessing the full power of flexbox. But dont worry its compitable with old browsers aswell.</p></li>
 	<li><h5>Dateformat</h5><p>In this version you must use the format YYYYMMDD, example 20130101. This is in order to fix problems with some months. Thanks to <a class="inline-style" href="http://webfro.gs/">web frogs</a> for pointing this out.</p></li>
@@ -101,20 +91,54 @@ include('/home/u/u0056300/www/ericwenn/php/basic/header.php');
 	<li><h5>Events</h5><p>Easily add events with certain properties such as starting time, ending time, location and name.</li>
 	<li><h5>Customizable Style</h5><p>Possible to style it with the help of the included css files.</p></li>
 </ul>
-<h2 opn="usage">Usage</h2>
+<h2 opn="usageHTML">Usage [HTML]</h2>
 <ul>
 	<li><h5>Simple calendar</h5><p><pre><code class="prettyprint"> &lt;div class=&quot;calendar&quot;&gt;&lt;/div&gt; </code></pre><p>This will result in a calendar without any events.</p></p></li>
 	<li><h5>Show days</h5><p>In order to show name of the days add the data showdays="true" to the calendar element. Like this:
 	<pre><code class="prettyprint"> &lt;div class=&quot;calendar&quot; data-showdays=&quot;true&quot; &gt;&lt;/div&gt; </code></pre></p></li>
 	<li><h5>Calendar with events</h5>
 	<p>
-	<pre><code class="prettyprint">&lt;div class=&quot;calendar&quot;&gt;<br/>	&lt;div data-role=&quot;day&quot; data-day=&quot;2013910&quot;&gt;<br/>		&lt;div data-role=&quot;event&quot; data-name=&quot;This is an event&quot; data-start=&quot;9.00&quot; data-end=&quot;9.30&quot; data-location=&quot;The Web&quot;&gt;&lt;/div&gt;<br/>		&lt;div data-role=&quot;event&quot; data-name=&quot;This is also an event&quot; data-start=&quot;10.00&quot; data-end=&quot;11.00&quot; data-location=&quot;At Home&quot;&gt;&lt;/div&gt;<br/>	&lt;/div&gt;<br/>&lt;/div&gt;</code></pre>
+	<pre><code class="prettyprint">&lt;div class=&quot;calendar&quot;&gt;<br/>	&lt;div data-role=&quot;day&quot; data-day=&quot;20130910&quot;&gt;<br/>		&lt;div data-role=&quot;event&quot; data-name=&quot;This is an event&quot; data-start=&quot;9.00&quot; data-end=&quot;9.30&quot; data-location=&quot;The Web&quot;&gt;&lt;/div&gt;<br/>		&lt;div data-role=&quot;event&quot; data-name=&quot;This is also an event&quot; data-start=&quot;10.00&quot; data-end=&quot;11.00&quot; data-location=&quot;At Home&quot;&gt;&lt;/div&gt;<br/>	&lt;/div&gt;<br/>&lt;/div&gt;</code></pre>
 	<p>Within the calendar container you can add events to be processed by the script. Each event must be wrapped in a container together with other events on the same day just as in the example.</p>
 	<p>The data-day value should containg leading zeroes.</p>
 	<pre><code class="prettyprint">&lt;div data-role=&quot;day&quot; data-day=&quot;201311&quot;&gt;</code></pre>
 	<p>This is incorrect and should instead be:</p>
 	<pre><code class="prettyprint">&lt;div data-role=&quot;day&quot; data-day=&quot;20130101&quot;&gt;</code></pre>
 	</p>
+</ul>
+<h2 opn="usageJS">Usage [JS]</h2>
+<ul>
+	<li><h5>Simple Calendar</h5><p><pre><code class="prettyprint"><?php echo htmlspecialchars('$(".calendarExample").calendar();')?></code></pre></p></li>
+	<li><h5>Calendar with events</h5><p><pre><code class="prettyprint"><?php echo htmlspecialchars('$(".calendarExample").calendar(array);')?></code></pre></p>
+	<p>Where array is, surprisingly, an array containing the events. Example: <pre><code class="prettyprint"><?php echo nl2br(htmlspecialchars('[
+		{
+			date: "20130915",
+			name: "Mulberry Festival",
+			start: "9.00",
+			end: "9.30",
+			location: "London"
+		},
+		{
+			date:"20131014",
+			name:"Mulberry Festival",
+			start: "9.00",
+			end:"10.00",
+			location:"Stockholm"
+		},
+		{
+			date: "20131015",
+			name:"York",
+			start:"10.00",
+			end:"11.00",
+			location:"York"
+		}
+	]'))?></code></pre></p>
+	<p>The dates should contain leading zeroes.</p></li>
+	<li><h5>Options</h5><p>You can pass along an option-object in the scriptcall. Accepted options are color, and showdays. Example: <pre><code class="prettyprint"><?php echo nl2br(htmlspecialchars('{
+		color: "red",
+		showdays: true,
+		}'))?></code></pre></p>
+		<p>These options are the default.</p></li>
 </ul>
 <div id="colorswatches">
 <h2 opn="colorswatches">Color Swatches</h2>

@@ -9,37 +9,36 @@ $(document).ready(function() {
 	$(document).on('click','.specific-day',activatecalendar);
 	$(document).on('click','.c-month-arrow',offsetcalendar);
 	$(window).resize(calendarScale);
-	$(".calendar").calendar({
-		"2013910": {
-			"Mulberry Festival": {
-				start: "9.00",
-				end: "9.30",
-				location: "London"
-			}
-		}
-	});
 	calendarSet();
 	calendarScale();
-	});
+});
 (function ( $ ) {
-    $.fn.calendar = function(array, color) {
-    	if(color == undefined) {
-				$(this).data("color","red");
-		} else {
-			$(this).data("color",color);
-		}
+    $.fn.calendar = function(array, options) {
+    	$this = this;
+		$this.append('<div class="c-month-view"><div class="c-month-arrow" data-dir="left">‹</div><p></p><div class="c-month-arrow" data-dir="right">›</div></div><div class="c-holder"><div class="c-grid"></div><div class="c-specific"><div class="specific-day"><div class="specific-day-info" i="day"></div><div class="specific-day-info" i="month"></div></div><div class="s-scheme"></div></div></div>');
+		$this.addClass('calendar');
+		var defaults = {
+			color: "red",
+			showdays: true
+		};
+		var opt = $.extend({}, defaults,options);
+		$this.data("color",opt.color);
+		if(array !== undefined) {
 			$.each(array, function(date,events) {
-				var tempdayarray = [];
-				$.each(events, function(ev,evdata) {
 					var tempeventarray = [];
-					tempeventarray["name"] = ev;
-					tempeventarray["start"] = evdata.start;
-					tempeventarray["end"] = evdata.end;
-					tempeventarray["location"] = evdata.location;
-					tempdayarray.push(tempeventarray);
-				});
-				calendarArray[date] = tempdayarray;
+					tempeventarray["name"] = events.name;
+					tempeventarray["start"] = events.start;
+					tempeventarray["end"] = events.end;
+					tempeventarray["location"] = events.location;
+					tempeventarray["date"] = events.date;
+					if(calendarArray[events.date] == undefined) {
+						calendarArray[events.date] = [tempeventarray];
+					} else {
+						calendarArray[events.date].push(tempeventarray);
+					}
 			});
+		}
+		calendarSetMonth($this);
         return this;
     }; 
 }( jQuery ));
@@ -95,21 +94,20 @@ $(document).ready(function() {
 				$(this).data("color","red");
 			}
 			$(this).find('[data-role=day]').each(function() {
-				var tempdayarray = [];
+				var tday = $(this).data('day');
 				$(this).find('[data-role=event]').each(function() {
 					var tempeventarray = [];
 					tempeventarray["name"] = $(this).data("name");
 					tempeventarray["start"] = $(this).data("start");
 					tempeventarray["end"] = $(this).data("end");
 					tempeventarray["location"] = $(this).data("location");
-					tempdayarray.push(tempeventarray);
-				});
-				if(calendarArray[$(this).data('day')] !== undefined) {
-					$.each(calendarArray[$(this).data('day')], function(k,v) {
-						tempdayarray.push(v)
-					});
-				} 
-				calendarArray[$(this).data('day')] = tempdayarray;
+					tempeventarray["date"] = tday;
+					if(calendarArray[tday] == undefined) {
+						calendarArray[tday] = [tempeventarray];
+					} else {
+						calendarArray[tday].push(tempeventarray);
+					}
+				}); 
 			});
 			calendarSetMonth($(this));
 		});
