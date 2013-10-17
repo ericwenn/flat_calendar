@@ -23,6 +23,7 @@ $(document).ready(function() {
 		};
 		var opt = $.extend({}, defaults,options);
 		$this.data("color",opt.color);
+		$this.data("showdays",opt.showdays);
 		if(array !== undefined) {
 			$.each(array, function(date,events) {
 					var tempeventarray = [];
@@ -90,9 +91,13 @@ $(document).ready(function() {
 	function calendarSet() {
 		$(".calendar").append('<div class="c-month-view"><div class="c-month-arrow" data-dir="left">‹</div><p></p><div class="c-month-arrow" data-dir="right">›</div></div><div class="c-holder"><div class="c-grid"></div><div class="c-specific"><div class="specific-day"><div class="specific-day-info" i="day"></div><div class="specific-day-info" i="month"></div></div><div class="s-scheme"></div></div></div>');
 		$(".calendar").each(function() {
-			if($(this).data("color") == undefined) {
-				$(this).data("color","red");
-			}
+		var defaults = {
+			color: "red",
+			showdays: true
+		};
+			var opt = $.extend({}, defaults, $(this).data());
+			$(this).data('color',opt.color);
+			$(this).data('showdays', opt.showdays);
 			$(this).find('[data-role=day]').each(function() {
 				var tday = $(this).data('day');
 				$(this).find('[data-role=event]').each(function() {

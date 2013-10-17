@@ -47,7 +47,7 @@ include('/home/u/u0056300/www/ericwenn/php/basic/header.php');
 <div opn="share" class="share-bar">
 <div class="g-plus" data-action="share" data-annotation="bubble"></div><a href="https://twitter.com/ericwenn" class="twitter-follow-button" data-show-count="false">Follow @ericwenn</a><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ericwenn.se/frameworks/flatmin/calendar/" data-via="ericwenn" data-text="A flat, responsive and awesome calendar widget" data-lang="en">Tweet</a>
 </div>
-<div class="box calendar" data-showdays="true" data-color="red" opn="demo" style="height:20em";>
+<div class="box calendar" data-showdays="false" data-color="red" opn="demo" style="height:20em";>
 	<div data-role="day" data-day="20131010">
 		<div data-role="event" data-name="This is an event" data-start="9.00" data-end="9.30" data-location="The Web"></div>
 		<div data-role="event" data-name="This is also an event" data-start="10.00" data-end="11.00" data-location="At Home"></div>
@@ -74,6 +74,10 @@ include('/home/u/u0056300/www/ericwenn/php/basic/header.php');
 <p>If you like this plugin and want to follow the development, follow me on twitter<p>
 <a href="https://twitter.com/ericwenn" class="twitter-follow-button" data-show-count="false">Follow @ericwenn</a>
 <pre><code class="prettyprint">&lt;link href=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/c.css&quot; rel=&quot;stylesheet&quot;&gt;<br/>&lt;script src=&quot;http://www.ericwenn.se/frameworks/flatmin/calendar/calendar.js&quot;&gt;&lt;/script&gt;</code></pre>
+<h2>Changelog v1.1.5</h2>
+<ul>
+	<li><h5>Javascript init</h5><p>The plugin can now be called with JS only. Check out documentation for how.</p></li>
+</ul>
 <h2>Changelog v1.1.0</h2>
 <ul>
 	<li><h5>Flexbox</h5><p>The plugin is now harnessing the full power of flexbox. But dont worry its compitable with old browsers aswell.</p></li>

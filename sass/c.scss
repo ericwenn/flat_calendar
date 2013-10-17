@@ -15,6 +15,7 @@
 @mixin flex-direction($e) {
 	-webkit-flex-direction:$e;
 	-ie-flex-direction:$e;
+	-ms-flex-direction:$e;
 	flex-direction:$e;
 }
 @mixin flex($e) {
@@ -61,9 +62,8 @@
 -o-user-select: $e;
 user-select: $e;
 }
+
 .calendar {
-	@include flex-box;
-	@include flex-direction(column);
 	color: white;
 	font-weight: 300;
 	* {
@@ -76,7 +76,7 @@ user-select: $e;
 	.c-month-view {
 		@include transition(all 0.5s);
 		@include user-select(none);
-		@include flex(1 0 0px);
+		height: 12.5%;
 		position:relative;
 		font-size:1.6em;
 		margin-bottom:1px;
@@ -99,28 +99,27 @@ user-select: $e;
 		}
 	}
 	.c-holder {
-		@include flex(6 0 auto);
+		height:87.5%;
 		position:relative;
 		.c-grid {
 			position:absolute;
 			height:100%;
+			width:100%;
 			top:0;
 			left:0;
-			@include flex-box;
-			@include flex-direction(column);
 			width:100%;
 			.c-row {
-				@include flex-box;
-				@include flex(5 0 auto);
 				width:100%;
+				@include calc(height, "100%/7 - 1px", (100/7) - 1%);
 				margin-bottom:1px;
 				&:last-child {
 					margin-bottom:0;
 				}
 				.c-day {
 					margin-right:1px;
-					@include flex-box;
-					@include flex(7 0 auto);
+					@include calc(width, "100%/7 - 1px", 13%);
+					height:100%;
+					display:inline-block;
 					position:relative;
 					&.c-l .date-holder{
 						font-size:1em;
@@ -249,6 +248,15 @@ user-select: $e;
 		}
 		.c-month-arrow {
 			display:none;
+		}
+	}
+}
+.calendar[data-showdays=false] {
+	.c-holder {
+		.c-grid {
+			.c-row {
+				@include calc(height, "100%/6 - 1px", 100%/6 - 1%)
+			}
 		}
 	}
 }
