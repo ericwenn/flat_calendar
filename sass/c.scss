@@ -80,6 +80,7 @@ user-select: $e;
 		position:relative;
 		font-size:1.6em;
 		margin-bottom:1px;
+		text-align:center;
 		.c-month-arrow {
 			width: 15%;
 			height:100%;
@@ -110,14 +111,14 @@ user-select: $e;
 			width:100%;
 			.c-row {
 				width:100%;
-				@include calc(height, "100%/7 - 1px", (100/7) - 1%);
-				margin-bottom:1px;
+				@include calc(margin-bottom, "0px + 1px", 0.2%);
+				@include calc(height, "100%/7 - 7px/6", (100/7) - 1.2%);
 				&:last-child {
 					margin-bottom:0;
 				}
 				.c-day {
-					margin-right:1px;
-					@include calc(width, "100%/7 - 1px", 13%);
+					@include calc(margin-right, "0px + 7px/6", 0.2%);
+					@include calc(width, "100%/7 - 1px", 98.8/7 + 0%);
 					height:100%;
 					display:inline-block;
 					position:relative;
@@ -255,7 +256,7 @@ user-select: $e;
 	.c-holder {
 		.c-grid {
 			.c-row {
-				@include calc(height, "100%/6 - 1px", 100%/6 - 1%)
+				@include calc(height, "100%/6 - 7px/6", 100%/6 - 1%)
 			}
 		}
 	}
