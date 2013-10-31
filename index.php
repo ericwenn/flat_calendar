@@ -12,11 +12,14 @@
 	<meta name="twitter:description" content="A flat & responsive calendar widget. This widget is a part of Eric Wennerbergs Flatmin Framework but works just as good in this standalone download. ">
 	<title>Flatmin Calendar Widget - Eric Wennerberg</title>
 	<link href="c.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="http://ericwenn.se/js/basic.js"></script>
+	<script src="calendar.js"></script>
 
 </head>
 <script type="text/javascript">
 	var i=0;
-	var scriptArray = ["http://code.jquery.com/jquery-2.0.3.min.js","http://ericwenn.se/js/basic.js","calendar.js","https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"];
+	var scriptArray = ["https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"];
 	function dJSol() {
 		d(i);
 	}

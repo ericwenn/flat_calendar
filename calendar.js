@@ -147,9 +147,10 @@ $(document).ready(function() {
 		var d = new Date();
 		var c = new Date();
 		var e = new Date();
+		var p = d;
 		if(offset !== undefined) {
-			d.setMonth(d.getMonth()+offset);
-			e.setMonth(e.getMonth()+offset);
+			d = monthChange(p,offset);
+			e = monthChange(p,offset);
 			ele.attr('offset', offset);
 		} else {
 			ele.attr('offset', 0);
@@ -203,4 +204,25 @@ $(document).ready(function() {
 		if(m.toString().length<2) m = "0"+m;
 		if(da.toString().length<2) da = "0"+da;
 		return y+''+m+''+da;
+	}
+	function monthChange(d,o) {
+		var dim = [31,28,31,30,31,30,31,31,30,31,30,31];
+		var day = d.getDate();
+		var month = o !== undefined ? d.getMonth()+o : d.getMonth();
+		var year = d.getFullYear();
+		var hours = d.getHours();
+		var minutes = d.getMinutes();
+		var seconds = d.getSeconds();
+		while(month>11) {
+			month= month-12;
+			year++;
+		}
+		while(month<0) {
+			month= month+12;
+			year--;
+		}
+		if(dim[month] < day) {
+			day = dim[month];
+		}
+		return new Date(year,month,day,hours,minutes,seconds);
 	}
